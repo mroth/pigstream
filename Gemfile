@@ -1,7 +1,7 @@
 source :rubygems
 
 gem 'tweetstream'
-gem 'yajl-ruby'
+gem 'oj'
 gem 'twitter'
 gem 'colored'
 
