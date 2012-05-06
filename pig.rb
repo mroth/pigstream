@@ -11,7 +11,7 @@ OAUTH_TOKEN = ENV['OAUTH_TOKEN']
 OAUTH_TOKEN_SECRET = ENV['OAUTH_TOKEN_SECRET']
 
 #config
-TERMS = ["beat level angry birds cant", "beat level angry birds can't", "beat level angry birds cannot", "dog"]
+TERMS = ["beat level angry birds cant", "beat level angry birds can't", "beat level angry birds cannot"]
 
 #
 # configure tweetstream instance
@@ -58,12 +58,14 @@ end
 end
 
 $stdout.sync = true
-LIVE = false
+LIVE = true
 @client.track(TERMS) do |status|
     puts " ** #{status.user.screen_name} ".green + status.text.white + " (\##{status.id.to_s})"
+    msg = "@#{status.user.screen_name} #{snortle}..."
+    puts " -> ".red + msg
     if LIVE
-        puts "Posting to twitter!"
-        #Twitter.update()
+        response = Twitter.update(msg, :in_reply_to_status_id => status.id)
+        puts " -> ".red + "posted as http://twitter.com/#{response.user.screen_name}/status/#{response.id.to_s}"
     end
 end
 
