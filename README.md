@@ -18,7 +18,5 @@ Almost all the "work" here is done by the `twitter` and `tweetstream` gems -- th
 
 Clone, `bundle install` to get dependencies.  Pigstream uses the typical Heroku pattern of putting keys in config vars, see https://devcenter.heroku.com/articles/config-vars for more details on that if you aren't familiar.  For local development, drop them in a `.env` file, and then do `foreman start` to run the process.
 
-Note: this program uses some minor idioms that require ruby 1.9.  Code
-readability is more important than reverse compatibility here -- deal
-with it.
+Note: this program uses a minor idiom that require ruby 1.9.3 (in particular, passing a range to `rand()`).  I prefer clean code over reverse compatibility here -- deal with it!
 
