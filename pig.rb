@@ -41,12 +41,10 @@ end
 def snortle
   phrases=["oink", "snort", "heh heh"]
   snort = ""
-  (3 + rand(5)).times do
-    snort += phrases[rand(phrases.size)].upcase
-    snort += " "
+  rand(3..8).times do
+    snort += phrases.sample.upcase + " "
   end
   snort += "HEH HEH HEH" #always end with laugh
-  return snort
 end
 
 #
