@@ -2,6 +2,8 @@
 
 Pigstream is a twitterbot that taunts people who can't beat a level on angry birds, powering the [@GloatingPig](http://twitter.com/GloatingPig) account.  It's a typical twitter reply bot.
 
+![screenshot](https://raw.github.com/mroth/pigstream/master/screenshots/ss2.png)
+
 However, most twitter reply-bots (including the earlier version of this bot, which used the popular chatterbot framework) have to constantly poll Twitter, and maintain some sort of state to avoid spamming the shit out of everything.
 
 Here, we instead use the twitter streaming API, which has the following benefits:
