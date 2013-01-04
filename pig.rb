@@ -8,30 +8,30 @@ require 'colored'
 #
 # secret tokens: load from environment variables
 #
-CONSUMER_KEY = ENV['CONSUMER_KEY']
-CONSUMER_SECRET = ENV['CONSUMER_SECRET']
-OAUTH_TOKEN = ENV['OAUTH_TOKEN']
+CONSUMER_KEY       = ENV['CONSUMER_KEY']
+CONSUMER_SECRET    = ENV['CONSUMER_SECRET']
+OAUTH_TOKEN        = ENV['OAUTH_TOKEN']
 OAUTH_TOKEN_SECRET = ENV['OAUTH_TOKEN_SECRET']
 
 #
 # configure tweetstream instance
 #
 TweetStream.configure do |config|
-  config.consumer_key = CONSUMER_KEY
-  config.consumer_secret = CONSUMER_SECRET
-  config.oauth_token = OAUTH_TOKEN
+  config.consumer_key       = CONSUMER_KEY
+  config.consumer_secret    = CONSUMER_SECRET
+  config.oauth_token        = OAUTH_TOKEN
   config.oauth_token_secret = OAUTH_TOKEN_SECRET
-  config.auth_method = :oauth
-  config.parser   = :oj
+  config.auth_method        = :oauth
+  config.parser             = :oj
 end
 
 #
 # configure twitter gem instance
 #
 Twitter.configure do |config|
-  config.consumer_key = CONSUMER_KEY
-  config.consumer_secret = CONSUMER_SECRET
-  config.oauth_token = OAUTH_TOKEN
+  config.consumer_key       = CONSUMER_KEY
+  config.consumer_secret    = CONSUMER_SECRET
+  config.oauth_token        = OAUTH_TOKEN
   config.oauth_token_secret = OAUTH_TOKEN_SECRET
 end
 
